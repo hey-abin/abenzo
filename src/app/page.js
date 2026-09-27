@@ -261,7 +261,7 @@ export default function Home() {
           aria-hidden="true"
         />
 
-        <div className="z-10 text-center px-4 max-w-5xl mx-auto pt-24 sm:pt-0">
+        <div className="z-10 text-center px-4 max-w-5xl mx-auto pt-24 sm:pt-0 pointer-events-none">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -297,7 +297,7 @@ export default function Home() {
             {/* CTAs */}
             <motion.div
               variants={fadeUp}
-              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pointer-events-auto"
             >
               <WhatsAppCTA
                 label="Start Your Project"
@@ -321,10 +321,10 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 z-[2] pointer-events-none"
           aria-hidden="true"
         >
-          <p className="font-space text-[60px] sm:text-[100px] md:text-[160px] font-black text-white/[0.03] select-none tracking-tighter">
+          <p className="font-space text-[60px] sm:text-[100px] md:text-[160px] font-black text-white/[0.03] select-none tracking-tighter pointer-events-none">
             Abenzo
           </p>
         </motion.div>
