@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { CONTACT } from './lib/constants';
 import { track } from './lib/analytics';
 import WhatsAppCTA from './components/WhatsAppCTA';
+import PackageSection from './components/PackageSection';
 
 // Lazy-load heavy components so the first paint is fast
 const Scene = dynamic(() => import('./components/Scene'), {
@@ -393,6 +394,11 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* ════════════════════════════════════════════
+          PACKAGES
+      ════════════════════════════════════════════ */}
+      <PackageSection />
 
       {/* ════════════════════════════════════════════
           WHY ABENZO

@@ -7,6 +7,7 @@ import { track } from '../lib/analytics';
 
 const navLinks = [
   { name: 'Services', href: '#services' },
+  { name: 'Packages', href: '#packages' },
   { name: 'Work',     href: '#work' },
   { name: 'How It Works', href: '#process' },
   { name: 'FAQ',      href: '#faq' },

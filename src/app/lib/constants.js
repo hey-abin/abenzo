@@ -31,7 +31,122 @@ export const CONTACT = {
 // ─── Analytics ────────────────────────────────────────────
 // Set via environment variables — never hard-code IDs.
 export const ANALYTICS = {
-  googleId:     process.env.NEXT_PUBLIC_GA_ID        || '',
-  metaPixelId:  process.env.NEXT_PUBLIC_META_PIXEL_ID || '960438733777815',
+  googleId:    process.env.NEXT_PUBLIC_GA_ID         || '',
+  metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || '960438733777815',
 };
 
+// ─── Packages ─────────────────────────────────────────────
+// Single source of truth for all package data.
+// Change prices, features, or names here — updates everywhere.
+export const PACKAGES = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    emoji: '🌱',
+    priceDisplay: '₹15,000+',
+    priceShort: '₹15K+',
+    priceNumber: 15000,
+    bestFor: 'Small businesses and simple professional websites.',
+    features: [
+      '3–5 pages',
+      'Responsive design',
+      'Modern UI',
+      'WhatsApp integration',
+      'Contact form',
+      'Basic SEO',
+      'Deployment',
+      'Basic support',
+    ],
+    highlighted: false,
+    waMessage:
+      "Hi Abenzo! 👋\nI'm interested in the Starter Package.\nStarting price shown on the website: ₹15,000+\nI'd like to discuss my requirements and get a quote.",
+  },
+  {
+    id: 'business',
+    name: 'Business',
+    emoji: '🚀',
+    priceDisplay: '₹30,000+',
+    priceShort: '₹30K+',
+    priceNumber: 30000,
+    bestFor: 'Growing businesses that need a stronger online presence.',
+    features: [
+      '5–10 pages',
+      'Custom UI/UX',
+      'Responsive design',
+      'Contact / enquiry forms',
+      'WhatsApp integration',
+      'SEO setup',
+      'Analytics integration',
+      'Deployment',
+      'Support',
+    ],
+    highlighted: true, // Visually highlighted as the popular choice
+    waMessage:
+      "Hi Abenzo! 👋\nI'm interested in the Business Package.\nStarting price shown on the website: ₹30,000+\nI'd like to discuss my requirements and get a quote.",
+  },
+  {
+    id: 'professional',
+    name: 'Professional',
+    emoji: '⚡',
+    priceDisplay: '₹50,000+',
+    priceShort: '₹50K+',
+    priceNumber: 50000,
+    bestFor: 'Businesses requiring advanced functionality.',
+    features: [
+      'Custom UI/UX',
+      'Advanced animations',
+      'Custom functionality',
+      'Database integration',
+      'Authentication (where required)',
+      'API integrations',
+      'Advanced SEO',
+      'Analytics',
+      'Deployment',
+      'Post-launch support',
+    ],
+    highlighted: false,
+    waMessage:
+      "Hi Abenzo! 👋\nI'm interested in the Professional Package.\nStarting price shown on the website: ₹50,000+\nI'd like to discuss my requirements and get a quote.",
+  },
+  {
+    id: 'custom',
+    name: 'Custom Software',
+    emoji: '🛠️',
+    priceDisplay: '₹75,000+',
+    priceShort: '₹75K+',
+    priceNumber: 75000,
+    bestFor: 'Businesses that need custom applications or business systems.',
+    features: [
+      'SaaS / CRM / Booking systems',
+      'Management systems',
+      'Custom dashboards',
+      'AI-powered applications',
+      'Business automation',
+      'Complex web applications',
+      'Full project planning',
+      'Ongoing support',
+    ],
+    isCustom: true, // Renders differently — not a fixed-price package
+    waMessage:
+      "Hi Abenzo! 👋\nI'm interested in the Custom Software Package.\nStarting price shown on the website: ₹75,000+\nI'd like to discuss my project requirements and get a quote.",
+  },
+];
+
+export function getPackageWhatsAppUrl(pkg) {
+  return getWhatsAppUrl(pkg?.waMessage || WA_DEFAULT_MESSAGE);
+}
+
+export const PACKAGES_DISCLAIMER =
+  'Final price depends on project requirements. The prices above are starting points — not fixed quotes.';
+
+// ─── Meta Ads Landing Page (/go) ──────────────────────────
+// Countdown delay before auto-redirect to WhatsApp (milliseconds).
+export const WHATSAPP_REDIRECT_DELAY = 5000;
+
+// Pre-filled message for the /go landing page auto-redirect
+export const AD_LANDING_MESSAGE =
+  "Hi Abenzo! 👋\nI came from your website and I'm interested in your services.\nI'd like to discuss a project.";
+
+// Pre-filled message for the "not sure" direct chat option on packages
+export const PACKAGES_HELP_MESSAGE =
+  "Hi Abenzo! 👋\nI have a project in mind and would like help choosing the right package.";
