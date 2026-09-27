@@ -28,9 +28,10 @@ export const CONTACT = {
   instagramHandle: '@abenzo.co.in',
 };
 
-// ─── Analytics (fill in when ready) ───────────────────────
+// ─── Analytics ────────────────────────────────────────────
 // Set via environment variables — never hard-code IDs.
 export const ANALYTICS = {
-  googleId: process.env.NEXT_PUBLIC_GA_ID || '',
-  metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || '',
+  googleId:     process.env.NEXT_PUBLIC_GA_ID        || '',
+  metaPixelId:  process.env.NEXT_PUBLIC_META_PIXEL_ID || '960438733777815',
 };
+
