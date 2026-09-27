@@ -1,3 +1,5 @@
+import { SITE_URL } from './lib/constants';
+
 export default function robots() {
   return {
     rules: {
@@ -5,6 +7,6 @@ export default function robots() {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://abenzo.vercel.app/sitemap.xml',
-  }
+    sitemap: `${SITE_URL}/sitemap.xml`,
+  };
 }

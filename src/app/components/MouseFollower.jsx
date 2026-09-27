@@ -1,43 +1,37 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 export default function MouseFollower() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cursorVariant, setCursorVariant] = useState("default");
+  const [pos, setPos] = useState({ x: -100, y: -100 });
+  const isDesktopRef = useRef(false);
 
   useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      });
-    };
+    // Detect touch devices — skip entirely on mobile
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouch) return;
 
-    window.addEventListener("mousemove", mouseMove);
-    return () => window.removeEventListener("mousemove", mouseMove);
+    isDesktopRef.current = true;
+
+    const mouseMove = (e) => {
+      setPos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', mouseMove, { passive: true });
+    return () => window.removeEventListener('mousemove', mouseMove);
   }, []);
 
-  const variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-      backgroundColor: "transparent",
-      border: "2px solid #008278",
-    },
-  };
-
+  // On touch devices the pos stays at -100,-100 so nothing shows
   return (
     <motion.div
       className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] hidden md:block"
-      variants={variants}
-      animate={cursorVariant}
-      transition={{
-        type: "spring",
-        stiffness: 500,
-        damping: 28,
-        mass: 0.5
+      style={{
+        x: pos.x - 16,
+        y: pos.y - 16,
+        border: '2px solid #008278',
+        backgroundColor: 'transparent',
       }}
+      transition={{ type: 'spring', stiffness: 500, damping: 28, mass: 0.5 }}
+      aria-hidden="true"
     />
   );
 }

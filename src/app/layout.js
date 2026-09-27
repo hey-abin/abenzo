@@ -1,74 +1,67 @@
-import { Inter, Space_Grotesk } from "next/font/google";
-import "./globals.css";
+import { Inter, Space_Grotesk } from 'next/font/google';
+import './globals.css';
+import { SITE_URL, CONTACT } from './lib/constants';
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: '--font-space' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' });
 
+// ─── SEO Metadata ─────────────────────────────────────────
 export const metadata = {
-  // 1. Base Domain - Critical for SEO
-  metadataBase: new URL('https://abenzo.vercel.app'), 
+  metadataBase: new URL(SITE_URL),
 
-  // 2. Google Verification
+  // Google Search Console verification
   verification: {
-    google: 'T-qo962cEjCVeNt4QzXjkMU1P78Efo9dpS7s_oQd1XI', 
+    google: 'T-qo962cEjCVeNt4QzXjkMU1P78Efo9dpS7s_oQd1XI',
   },
 
-  // 3. Functional Title - Describes WHAT you do for Global Ranking
-  title: {
-    default: "Abenzo | Web Development Agency | We will build what you imagine",
-    template: "%s | Abenzo"
+  // Favicon / Icons — explicitly declared so Google picks the right one
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.ico',
   },
-  
-  // 4. Description - Professional & International
-  description: "Abenzo is a global digital agency specializing in award-winning 3D websites, high-performance Next.js applications, and immersive brand experiences for startups worldwide., We will build what you imagine",
-  
-  // 5. Global & High-Traffic Keywords
-  keywords: [
-    // Core Services
-    "Web Development", 
-    "3D Web Design", 
-    "Next.js Agency", 
-    "React Developer", 
-    "UI/UX Design",
-    
-    // Tech Stack (High Ranking)
-    "React Three Fiber", 
-    "Three.js Developer", 
-    "WebGL", 
-    "GSAP Animations", 
-    "Framer Motion",
-    "Tailwind CSS",
-    "Next.js 14",
-    
-    // Global & Location
-    "Freelance Web Developer Worldwide", 
-    "Remote Front-End Developer",
-    "Web Design Agency Dubai",
-    "Web Development USA",
-    "Kerala", 
-    "India",
-    
-    // Niche/Functioning
-    "Immersive Web Experiences", 
-    "Interactive Website", 
-    "Creative Developer", 
-    "3D Portfolio",
-    "Abenzo",
-    "Startup Branding",
-    "E-commerce Development"
-  ],
-  
-  // 6. Open Graph (Social Media Cards - LinkedIn/Twitter/WhatsApp)
+
+  // Title
+  title: {
+    default: 'Abenzo | Web Development & Software Solutions',
+    template: '%s | Abenzo',
+  },
+
+  // Description — under 160 chars, no keyword stuffing
+  description:
+    'Abenzo builds high-performance websites, web applications, e-commerce stores and custom software for businesses. Based in India, serving clients worldwide.',
+
+  // Open Graph — WhatsApp, Facebook, LinkedIn previews
   openGraph: {
-    title: "Abenzo | 3D Web Development & Global Next.js Agency",
-    description: "Building award-winning 3D websites and high-performance digital brands for clients worldwide.",
-    url: 'https://abenzo.vercel.app',
+    title: 'Abenzo | Web Development & Software Solutions',
+    description:
+      'We build websites, web applications and custom software that help businesses attract customers and grow online.',
+    url: SITE_URL,
     siteName: 'Abenzo',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Abenzo — Web Development & Software Solutions',
+      },
+    ],
   },
 
-  // 7. Robots - Tells Google to index everything
+  // Twitter / X card
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Abenzo | Web Development & Software Solutions',
+    description:
+      'High-performance websites, web applications and custom software for businesses worldwide.',
+    images: ['/og-image.png'],
+  },
+
+  // Robots
   robots: {
     index: true,
     follow: true,
@@ -80,28 +73,41 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+
+  // Canonical
+  alternates: {
+    canonical: SITE_URL,
+  },
 };
 
 export default function RootLayout({ children }) {
-  // JSON-LD for Google Rich Results (Business Card)
+  // Structured Data — ProfessionalService
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Abenzo",
-    "url": "https://abenzo.vercel.app",
-    "logo": "https://abenzo.vercel.app/icon.png", 
-    "sameAs": [
-      "https://instagram.com/abenzo.co.in",
-      "https://wa.me/918590814463"
-    ],
-    "description": "Global freelance web development agency specializing in 3D and Next.js.",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "India" 
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Abenzo',
+    url: SITE_URL,
+    logo: `${SITE_URL}/icon.svg`,
+    description:
+      'Abenzo is a web development and software agency specializing in high-performance websites, web applications, e-commerce and custom software solutions.',
+    sameAs: [CONTACT.instagram, CONTACT.whatsapp],
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'India',
     },
-    // "areaServed" tells Google you work Globally
-    "areaServed": ["United States", "United Kingdom", "United Arab Emirates", "India", "Canada"]
+    areaServed: [
+      'India',
+      'United States',
+      'United Kingdom',
+      'United Arab Emirates',
+      'Canada',
+      'Australia',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      availableLanguage: ['English'],
+    },
   };
 
   return (
@@ -112,7 +118,9 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} bg-abenzo-dark text-white antialiased`}>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} bg-abenzo-dark text-white antialiased`}
+      >
         {children}
       </body>
     </html>

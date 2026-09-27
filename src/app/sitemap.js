@@ -1,14 +1,12 @@
-export default function sitemap() {
-  const baseUrl = 'https://abenzo.vercel.app';
+import { SITE_URL } from './lib/constants';
 
+export default function sitemap() {
   return [
     {
-      url: baseUrl,
+      url: SITE_URL,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
-    // Removed anchor links (#services, etc) as they are not separate pages 
-    // and are ignored by Google Search Console in sitemaps.
   ];
 }
