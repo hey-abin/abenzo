@@ -14,13 +14,11 @@ export const metadata = {
     google: 'T-qo962cEjCVeNt4QzXjkMU1P78Efo9dpS7s_oQd1XI',
   },
 
-  // Favicon / Icons — explicitly declared so Google picks the right one
+  // Favicon / Icon — uses icon.svg (the Abenzo "A" logo)
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
       { url: '/icon.svg', type: 'image/svg+xml' },
     ],
-    shortcut: '/favicon.ico',
   },
 
   // Title
