@@ -59,12 +59,24 @@ export default function Scene() {
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const count = isMobile ? 1500 : 3000;
-    dispatch({
-      type: 'INIT',
-      prefersReduced: mq.matches,
-      positions: generateSphere(count),
-    });
+    const count = isMobile ? 800 : 2500;
+
+    const init = () => {
+      dispatch({
+        type: 'INIT',
+        prefersReduced: mq.matches,
+        positions: generateSphere(count),
+      });
+    };
+
+    // Defer WebGL and particle setup to idle time to avoid main-thread blocking during initial paint
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      const handle = window.requestIdleCallback(init, { timeout: 1500 });
+      return () => window.cancelIdleCallback(handle);
+    } else {
+      const timer = setTimeout(init, 200);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   // Before hydration / on SSR just show nothing (lazy-loaded anyway)

@@ -54,7 +54,7 @@ export default function PackageSection() {
           {/* Packages Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mb-10">
             {PACKAGES.map((pkg) => (
-              <motion.div key={pkg.id} variants={fadeUp} className="flex">
+              <motion.div key={pkg.id} variants={fadeUp} className="flex w-full">
                 <PackageCard pkg={pkg} />
               </motion.div>
             ))}

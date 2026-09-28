@@ -12,7 +12,10 @@ export const metadata = {
 
   // Google Search Console verification
   verification: {
-    google: 'T-qo962cEjCVeNt4QzXjkMU1P78Efo9dpS7s_oQd1XI',
+    google: [
+      '4Xpq2fKsC4LX86fy6NSQ2TEkksdBipnfHlFg7Z2AKVA',
+      'T-qo962cEjCVeNt4QzXjkMU1P78Efo9dpS7s_oQd1XI',
+    ],
   },
 
   // Favicon / Icon — uses icon.svg (the Abenzo "A" logo)
@@ -123,13 +126,13 @@ export default function RootLayout({ children }) {
         {children}
 
         {/* ── Meta Pixel ─────────────────────────────────────────
-            strategy="afterInteractive" → loads after page is ready,
-            so it never blocks the first paint or LCP.            */}
+            strategy="lazyOnload" → loads during browser idle time,
+            freeing main-thread CPU time during initial page load.  */}
         {ANALYTICS.metaPixelId && (
           <>
             <Script
               id="meta-pixel"
-              strategy="afterInteractive"
+              strategy="lazyOnload"
               dangerouslySetInnerHTML={{
                 __html: `
                   !function(f,b,e,v,n,t,s)

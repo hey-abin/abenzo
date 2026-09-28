@@ -17,7 +17,7 @@ export default function ClickRipple() {
       setRipples((prev) => [...prev, newRipple]);
     };
 
-    window.addEventListener('click', handleClick);
+    window.addEventListener('click', handleClick, { passive: true });
     return () => window.removeEventListener('click', handleClick);
   }, []);
 
@@ -53,7 +53,7 @@ export default function ClickRipple() {
               left: ripple.x,
               top: ripple.y,
             }}
-            className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-white/5 backdrop-blur-[2px] shadow-[0_0_80px_rgba(0,130,120,0.2)]"
+            className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-white/5 shadow-[0_0_80px_rgba(0,130,120,0.2)]"
           />
         ))}
       </AnimatePresence>

@@ -59,10 +59,10 @@ export default function PackageCard({ pkg, compact = false, onSelect }) {
 
   return (
     <div
-      className={`group relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 border ${
+      className={`w-full h-full group relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 border ${
         isHighlighted
           ? 'bg-gradient-to-b from-[#008278]/20 via-[#008278]/5 to-transparent border-[#008278] shadow-[0_0_40px_rgba(0,130,120,0.25)] lg:-translate-y-2'
-          : 'bg-white/[0.02] border-white/10 hover:border-white/20 hover:bg-white/[0.04]'
+          : 'bg-white/[0.02] border-white/10 hover:border-[#008278]/50 hover:bg-white/[0.04]'
       }`}
     >
       {/* Popular badge */}
@@ -76,13 +76,15 @@ export default function PackageCard({ pkg, compact = false, onSelect }) {
 
       <div>
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl" aria-hidden="true">{pkg.emoji}</span>
-            <h3 className="font-space text-2xl font-bold text-white">{pkg.name}</h3>
+        <div className="flex items-start justify-between gap-3 mb-4">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="text-2xl flex-shrink-0" aria-hidden="true">{pkg.emoji}</span>
+            <h3 className="font-space text-xl sm:text-2xl font-bold text-white leading-tight">
+              {pkg.name}
+            </h3>
           </div>
           {isCustom && (
-            <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-white/10 text-gray-300">
+            <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-white/10 text-gray-300 flex-shrink-0 whitespace-nowrap mt-0.5">
               Tailored
             </span>
           )}
@@ -140,7 +142,7 @@ export default function PackageCard({ pkg, compact = false, onSelect }) {
           className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm tracking-wide transition-all duration-300 active:scale-95 ${
             isHighlighted
               ? 'bg-[#008278] hover:bg-[#009b8f] text-white shadow-[0_0_20px_rgba(0,130,120,0.4)] hover:shadow-[0_0_25px_rgba(0,130,120,0.6)]'
-              : 'border border-white/20 hover:border-white/60 bg-white/5 hover:bg-white/10 text-white'
+              : 'border border-white/20 hover:border-[#008278] hover:text-[#00c2b2] bg-white/5 hover:bg-[#008278]/10 text-white'
           }`}
           aria-label={`${getCtaLabel()} on WhatsApp`}
         >
