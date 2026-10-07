@@ -1,0 +1,60 @@
+# Abenzo — Web Development & 3D Digital Experience Agency
+
+> Abenzo is a premium digital agency specializing in high-performance web development, interactive 3D web experiences, Next.js engineering, UI/UX design, e-commerce, and bespoke software solutions. Based in India and serving clients worldwide.
+
+## Core Information
+- Website: https://abenzo.co.in
+- Headquarters: India (Kerala)
+- Global Delivery: India, United States, United Kingdom, UAE, Canada, Australia, Worldwide
+- Primary Focus: High-performance Next.js websites, Three.js 3D web experiences, custom web applications
+- Primary Contact (WhatsApp): +91 85908 14463 (https://wa.me/918590814463)
+- Email: abenzo.co.in@gmail.com
+- Instagram: https://instagram.com/abenzo.co.in (@abenzo.co.in)
+
+## Specialized Services
+- Custom Web Development: https://abenzo.co.in/services/web-development
+  Bespoke business websites engineered with clean semantic code, sub-second response times, mobile responsiveness, and technical SEO foundation.
+- 3D Web Development: https://abenzo.co.in/services/3d-web-development
+  Interactive 3D web applications and immersive browser graphics utilizing Three.js, React Three Fiber, WebGL, and custom shader pipelines.
+- Next.js Development: https://abenzo.co.in/services/nextjs-development
+  Enterprise-ready Next.js solutions leveraging the App Router, server-side rendering (SSR), static site generation (SSG), and Edge API routes for speed and Core Web Vitals optimization.
+- React.js Development: https://abenzo.co.in/services/react-development
+  Dynamic frontend web applications, interactive interfaces, reusable component systems, and client-side performance engineering.
+- UI/UX Design & Website Redesign: https://abenzo.co.in/services/ui-ux-design
+  Modern design systems, user journey mapping, high-fidelity prototypes, and complete visual redesigns aimed at increasing conversion rates.
+- E-Commerce Development: https://abenzo.co.in/services/ecommerce-development
+  Custom e-commerce architectures, friction-free checkout workflows, secure payment gateways (Razorpay, Stripe), and inventory synchronization.
+- Shopify Development: https://abenzo.co.in/services/shopify-development
+  Custom Shopify theme design, Liquid development, store setup, third-party app integrations, and mobile commerce optimization.
+- SaaS & Web App Development: https://abenzo.co.in/services/saas-development
+  Full-stack web applications, minimum viable products (MVPs), multi-tenant cloud platforms, dashboards, and internal business tools.
+
+## Key Technologies
+- Frameworks & Libraries: Next.js, React, Node.js
+- 3D & Creative Engineering: Three.js, React Three Fiber (@react-three/fiber), Drei (@react-three/drei), WebGL, GSAP, Framer Motion
+- Styling & Architecture: Tailwind CSS, CSS Modules, Modern Responsive CSS
+- Cloud, Storage & APIs: Vercel, Firebase, MongoDB, REST & GraphQL APIs
+
+## Selected Projects & Portfolio
+- PetLink (https://petlinkk.vercel.app): AI-powered pet matchmaking, health tracking, and adoption ecosystem built with Next.js, Firebase, MongoDB, and Gemini AI.
+- My Coco (https://mycocopet.vercel.app): Immersive 3D interactive web game demonstrating real-time browser physics and 3D graphics built with React Three Fiber, Three.js, and Next.js.
+- Full Portfolio: https://abenzo.co.in/work
+
+## Pricing Model & Engagement
+- Starter Package: Starting at ₹15,000+ (3–5 pages, responsive design, WhatsApp integration, basic SEO, deployment)
+- Business Package: Starting at ₹30,000+ (5–10 pages, custom UI/UX, contact/lead capture, analytics, SEO)
+- Professional Package: Starting at ₹50,000+ (Custom UI/UX, advanced animations, database, authentication, API integrations)
+- Custom Software / SaaS: Starting at ₹75,000+ (Tailored SaaS, CRM, booking systems, dashboards, automation)
+- Note: Final pricing depends strictly on project requirements and scope.
+
+## Important Pages & Resources
+- Homepage: https://abenzo.co.in
+- Services Hub: https://abenzo.co.in/services
+- Work & Case Studies: https://abenzo.co.in/work
+- About Abenzo: https://abenzo.co.in/about
+- Contact & Consultation: https://abenzo.co.in/contact
+- XML Sitemap: https://abenzo.co.in/sitemap.xml
+- Robots Policy: https://abenzo.co.in/robots.txt
+- Agentic Manifest: https://abenzo.co.in/agentic.xml
+- AI Agent Discovery: https://abenzo.co.in/agents.txt
+- Machine-Readable Agent Metadata: https://abenzo.co.in/agents.json

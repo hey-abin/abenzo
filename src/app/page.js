@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   ArrowRight, Globe, Code2, ShoppingCart, Cpu,
@@ -11,6 +12,8 @@ import {
 import { useState } from 'react';
 import { CONTACT } from './lib/constants';
 import { track } from './lib/analytics';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import WhatsAppCTA from './components/WhatsAppCTA';
 import PackageSection from './components/PackageSection';
 
@@ -42,53 +45,39 @@ const fadeUp = {
 const services = [
   {
     icon: <Globe aria-hidden="true" />,
-    title: 'Business Website Development',
+    title: 'Custom Web Development',
     desc: 'Professional websites that make a strong first impression and turn visitors into customers.',
-  },
-  {
-    icon: <Code2 aria-hidden="true" />,
-    title: 'Custom Web Applications',
-    desc: 'Tailor-made web apps built around your business workflow — dashboards, portals, tools and more.',
-  },
-  {
-    icon: <ShoppingCart aria-hidden="true" />,
-    title: 'E-Commerce Development',
-    desc: 'Online stores with seamless checkout, payment gateway integration and inventory management.',
-  },
-  {
-    icon: <Cpu aria-hidden="true" />,
-    title: 'Custom Software Solutions',
-    desc: 'Bespoke software that automates your processes and solves real business problems.',
-  },
-  {
-    icon: <PenTool aria-hidden="true" />,
-    title: 'UI/UX Design',
-    desc: 'Clean, intuitive interfaces designed to improve user experience and increase conversions.',
-  },
-  {
-    icon: <RefreshCcw aria-hidden="true" />,
-    title: 'Website Redesign',
-    desc: 'Modernise your outdated website with a fresh design that reflects your brand today.',
+    href: '/services/web-development',
   },
   {
     icon: <Zap aria-hidden="true" />,
-    title: 'Performance Optimisation',
-    desc: 'Faster load times, better Core Web Vitals and improved user experience across all devices.',
+    title: '3D & Interactive Web Experiences',
+    desc: 'Immersive 3D websites, WebGL shaders and real-time graphics powered by Three.js and React Three Fiber.',
+    href: '/services/3d-web-development',
   },
   {
-    icon: <Search aria-hidden="true" />,
-    title: 'SEO Optimisation',
-    desc: 'Technical SEO and content structure that helps your business rank on Google.',
+    icon: <Code2 aria-hidden="true" />,
+    title: 'Next.js & React Engineering',
+    desc: 'Enterprise App Router architecture, Server Components, SSR, and dynamic user interfaces.',
+    href: '/services/nextjs-development',
   },
   {
-    icon: <FileCode aria-hidden="true" />,
-    title: 'Landing Pages',
-    desc: 'High-converting landing pages built for ad campaigns, product launches and lead generation.',
+    icon: <ShoppingCart aria-hidden="true" />,
+    title: 'E-Commerce & Shopify Stores',
+    desc: 'Online stores with seamless checkout, payment gateway integration and inventory management.',
+    href: '/services/ecommerce-development',
   },
   {
-    icon: <LifeBuoy aria-hidden="true" />,
-    title: 'Maintenance & Support',
-    desc: 'Ongoing updates, security patches and improvements so your site stays fast and reliable.',
+    icon: <Cpu aria-hidden="true" />,
+    title: 'Custom Software & SaaS Platforms',
+    desc: 'Bespoke web applications, MVPs, client dashboards and automation tailored to your workflows.',
+    href: '/services/saas-development',
+  },
+  {
+    icon: <PenTool aria-hidden="true" />,
+    title: 'UI/UX Design & Website Redesign',
+    desc: 'Modern design systems, intuitive user journeys, and conversion-focused redesigns for outdated sites.',
+    href: '/services/ui-ux-design',
   },
 ];
 
@@ -239,6 +228,7 @@ function FAQItem({ q, a }) {
 export default function Home() {
   return (
     <main className="bg-abenzo-dark min-h-screen text-white selection:bg-[#008278] selection:text-white">
+      <Navbar />
       <MouseFollower />
       <ClickRipple />
 
@@ -273,7 +263,7 @@ export default function Home() {
               variants={fadeUp}
               className="text-[#008278] font-bold tracking-[0.2em] text-[10px] sm:text-xs uppercase mb-5 sm:mb-6"
             >
-              Web Development • Software • Digital Experiences
+              Web Development • 3D Experiences • Next.js &amp; React
             </motion.p>
 
             {/* H1 — the primary message */}
@@ -290,9 +280,9 @@ export default function Home() {
               variants={fadeUp}
               className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed"
             >
-              We build high-performance websites, web applications and digital
-              experiences that help businesses attract customers, build trust
-              and grow online.
+              We build high-performance Next.js websites, interactive 3D digital
+              experiences and custom software that help businesses attract customers,
+              build trust and grow online.
             </motion.p>
 
             {/* CTAs */}
@@ -369,16 +359,38 @@ export default function Home() {
                   key={s.title}
                   variants={fadeUp}
                   whileHover={{ y: -4 }}
-                  className="p-6 sm:p-8 border border-white/5 bg-white/[0.03] rounded-2xl hover:border-[#008278]/30 hover:bg-white/[0.05] transition-all cursor-default group"
+                  className="p-6 sm:p-8 border border-white/5 bg-white/[0.03] rounded-2xl hover:border-[#008278]/30 hover:bg-white/[0.05] transition-all group flex flex-col justify-between"
                 >
-                  <div className="text-[#008278] mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {s.icon}
+                  <div>
+                    <div className="text-[#008278] mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {s.icon}
+                    </div>
+                    <h3 className="text-base sm:text-lg font-bold mb-2 font-space text-white">
+                      <Link href={s.href} className="hover:text-[#008278] transition-colors">
+                        {s.title}
+                      </Link>
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{s.desc}</p>
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold mb-2 font-space">{s.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+                  <Link
+                    href={s.href}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#008278] hover:text-[#00a396] transition-colors pt-2"
+                  >
+                    Learn More <ArrowRight size={13} aria-hidden="true" />
+                  </Link>
                 </motion.div>
               ))}
             </div>
+
+            {/* View all services CTA */}
+            <motion.div variants={fadeUp} className="text-center mt-10">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/50 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all"
+              >
+                Explore All Specialized Services <ArrowRight size={15} aria-hidden="true" />
+              </Link>
+            </motion.div>
 
             {/* WhatsApp CTA below services */}
             <motion.div variants={fadeUp} className="text-center mt-12 sm:mt-16">
@@ -624,6 +636,23 @@ export default function Home() {
         className="py-20 sm:py-28 px-4 sm:px-6 bg-abenzo-dark relative z-10"
         aria-label="Frequently asked questions"
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.a,
+                },
+              })),
+            }),
+          }}
+        />
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial="hidden"
@@ -758,25 +787,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 sm:py-10 px-4 text-center bg-[#050a08] border-t border-white/5">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-600">
-          <span className="font-space font-bold text-gray-500">
-            Abenzo<span className="text-[#008278]">.</span>
-          </span>
-          <span>© {new Date().getFullYear()} Abenzo. All rights reserved.</span>
-          <a
-            href={CONTACT.whatsappFull}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => track.whatsappClick('footer')}
-            className="flex items-center gap-1.5 text-[#008278] hover:text-[#00a396] transition-colors"
-            aria-label="Chat on WhatsApp"
-          >
-            <MessageCircle size={13} aria-hidden="true" />
-            Chat on WhatsApp
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

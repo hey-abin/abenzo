@@ -27,19 +27,19 @@ export const metadata = {
 
   // Title
   title: {
-    default: 'Abenzo | Web Development & Software Solutions',
+    default: 'Abenzo | Web Development & 3D Digital Experience Agency',
     template: '%s | Abenzo',
   },
 
-  // Description — under 160 chars, no keyword stuffing
+  // Description
   description:
-    'Abenzo builds high-performance websites, web applications, e-commerce stores and custom software for businesses. Based in India, serving clients worldwide.',
+    'Abenzo is a premium web development and 3D digital experience agency specializing in high-performance Next.js websites, interactive 3D web experiences, custom web apps, and UI/UX design. Based in India, serving clients worldwide.',
 
   // Open Graph — WhatsApp, Facebook, LinkedIn previews
   openGraph: {
-    title: 'Abenzo | Web Development & Software Solutions',
+    title: 'Abenzo | Web Development & 3D Digital Experience Agency',
     description:
-      'We build websites, web applications and custom software that help businesses attract customers and grow online.',
+      'We build high-performance Next.js websites, interactive 3D digital experiences, and custom web applications that help businesses attract customers and grow online.',
     url: SITE_URL,
     siteName: 'Abenzo',
     locale: 'en_US',
@@ -49,7 +49,7 @@ export const metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Abenzo — Web Development & Software Solutions',
+        alt: 'Abenzo — Web Development & 3D Digital Experience Agency',
       },
     ],
   },
@@ -57,9 +57,9 @@ export const metadata = {
   // Twitter / X card
   twitter: {
     card: 'summary_large_image',
-    title: 'Abenzo | Web Development & Software Solutions',
+    title: 'Abenzo | Web Development & 3D Digital Experience Agency',
     description:
-      'High-performance websites, web applications and custom software for businesses worldwide.',
+      'High-performance Next.js websites, interactive 3D digital experiences, and custom web applications for businesses worldwide.',
     images: ['/og-image.png'],
   },
 
@@ -83,33 +83,68 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // Structured Data — ProfessionalService
+  // Structured Data — Organization, WebSite & ProfessionalService Graph
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name: 'Abenzo',
-    url: SITE_URL,
-    logo: `${SITE_URL}/icon.svg`,
-    description:
-      'Abenzo is a web development and software agency specializing in high-performance websites, web applications, e-commerce and custom software solutions.',
-    sameAs: [CONTACT.instagram, CONTACT.whatsapp],
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'India',
-    },
-    areaServed: [
-      'India',
-      'United States',
-      'United Kingdom',
-      'United Arab Emirates',
-      'Canada',
-      'Australia',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: 'Abenzo',
+        description:
+          'Abenzo is a premium web development and 3D digital experience agency specializing in high-performance Next.js websites, interactive 3D web experiences, and custom software.',
+        publisher: {
+          '@id': `${SITE_URL}/#organization`,
+        },
+        inLanguage: 'en',
+      },
+      {
+        '@type': ['Organization', 'ProfessionalService'],
+        '@id': `${SITE_URL}/#organization`,
+        name: 'Abenzo',
+        legalName: 'Abenzo Web Development & Software Solutions',
+        url: SITE_URL,
+        logo: `${SITE_URL}/icon.svg`,
+        image: `${SITE_URL}/og-image.png`,
+        description:
+          'Abenzo is a web development and 3D digital experience agency specializing in high-performance websites, Next.js web applications, Three.js 3D web experiences, e-commerce, and custom software solutions.',
+        sameAs: [CONTACT.instagram, CONTACT.whatsapp],
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'India',
+        },
+        areaServed: [
+          'India',
+          'United States',
+          'United Kingdom',
+          'United Arab Emirates',
+          'Canada',
+          'Australia',
+        ],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+91-8590814463',
+          contactType: 'sales',
+          availableLanguage: ['English', 'Malayalam'],
+        },
+        knowsAbout: [
+          'Web Development',
+          'Custom Web Development',
+          'Next.js Development',
+          'React.js Development',
+          'Three.js Development',
+          '3D Web Development',
+          'UI/UX Design',
+          'Website Redesign',
+          'E-Commerce Development',
+          'Shopify Development',
+          'SaaS Development',
+          'Performance Optimization',
+          'Technical SEO',
+        ],
+      },
     ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer service',
-      availableLanguage: ['English'],
-    },
   };
 
   return (
@@ -159,6 +194,24 @@ export default function RootLayout({ children }) {
               />
             </noscript>
           </>
+        )}
+        {/* ── Microsoft Clarity ──────────────────────────────────
+            strategy="afterInteractive" → loads right after hydration
+            to record sessions and heatmaps without blocking FCP/LCP. */}
+        {ANALYTICS.clarityProjectId && (
+          <Script
+            id="microsoft-clarity"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "${ANALYTICS.clarityProjectId}");
+              `,
+            }}
+          />
         )}
       </body>
     </html>

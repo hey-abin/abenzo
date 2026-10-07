@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
@@ -6,11 +7,11 @@ import { CONTACT } from '../lib/constants';
 import { track } from '../lib/analytics';
 
 const navLinks = [
-  { name: 'Services', href: '#services' },
-  { name: 'Packages', href: '#packages' },
-  { name: 'Work',     href: '#work' },
-  { name: 'How It Works', href: '#process' },
-  { name: 'FAQ',      href: '#faq' },
+  { name: 'Services', href: '/services' },
+  { name: 'Work',     href: '/work' },
+  { name: 'Packages', href: '/#packages' },
+  { name: 'About',    href: '/about' },
+  { name: 'Contact',  href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -27,11 +28,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* Logo */}
-        <a href="#" className="relative z-50" aria-label="Abenzo — Home">
+        <Link href="/" className="relative z-50" aria-label="Abenzo — Home">
           <span className="font-space text-2xl sm:text-3xl font-extrabold tracking-tighter text-white">
             Abenzo<span className="text-[#008278]">.</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div
@@ -39,7 +40,7 @@ export default function Navbar() {
           role="list"
         >
           {navLinks.map((link, index) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               role="listitem"
@@ -61,7 +62,7 @@ export default function Navbar() {
                   transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                 />
               )}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -107,14 +108,14 @@ export default function Navbar() {
             className="absolute top-20 left-4 right-4 bg-[#050a08]/95 backdrop-blur-xl border border-white/10 p-6 rounded-2xl md:hidden shadow-2xl flex flex-col gap-4 text-center z-40"
           >
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="text-base font-semibold text-gray-300 hover:text-[#008278] transition-colors py-1"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
 
             <div className="h-px bg-white/10 my-1" />

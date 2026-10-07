@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<agentic version="1.0" xmlns="https://abenzo.vercel.app/agentic">
+<agentic version="1.0" xmlns="https://abenzo.co.in/agentic">
   <!-- 
     ======================================================================
     Abenzo — Machine-Readable Agentic Manifest for AI Agents & LLM Crawlers
@@ -12,8 +12,8 @@
     <category>Web Development, Custom Web Apps, Software Engineering</category>
     <tagline>Web Development &amp; Software Solutions | We will build what you imagine</tagline>
     <description>Abenzo builds high-performance websites, web applications, e-commerce stores, and bespoke software solutions for businesses. Based in India and serving clients globally.</description>
-    <url>https://abenzo.vercel.app</url>
-    <logo>https://abenzo.vercel.app/icon.svg</logo>
+    <url>https://abenzo.co.in</url>
+    <logo>https://abenzo.co.in/icon.svg</logo>
     <headquarters>India</headquarters>
     <targetMarkets>
       <market countryCode="IN">India</market>
@@ -174,10 +174,10 @@
   </contactEndpoints>
 
   <navigation>
-    <link rel="canonical" href="https://abenzo.vercel.app/" description="Main Homepage" />
-    <link rel="landing" href="https://abenzo.vercel.app/go" description="Meta Ads Instant Consultation Onboarding" />
-    <link rel="sitemap" href="https://abenzo.vercel.app/sitemap.xml" description="XML Sitemap" />
-    <link rel="robots" href="https://abenzo.vercel.app/robots.txt" description="Robots Configuration" />
-    <link rel="agentic" href="https://abenzo.vercel.app/agentic.xml" description="Machine-readable AI Agent Manifest" />
+    <link rel="canonical" href="https://abenzo.co.in/" description="Main Homepage" />
+    <link rel="landing" href="https://abenzo.co.in/go" description="Meta Ads Instant Consultation Onboarding" />
+    <link rel="sitemap" href="https://abenzo.co.in/sitemap.xml" description="XML Sitemap" />
+    <link rel="robots" href="https://abenzo.co.in/robots.txt" description="Robots Configuration" />
+    <link rel="agentic" href="https://abenzo.co.in/agentic.xml" description="Machine-readable AI Agent Manifest" />
   </navigation>
 </agentic>

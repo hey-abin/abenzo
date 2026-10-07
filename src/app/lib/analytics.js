@@ -18,6 +18,9 @@ export function trackEvent(eventName, params = {}) {
     if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
       window.fbq('trackCustom', eventName, params);
     }
+    if (typeof window !== 'undefined' && typeof window.clarity === 'function') {
+      window.clarity('event', eventName);
+    }
   } catch {
     // Silently fail — never break the UI for analytics
   }

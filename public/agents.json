@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Abenzo",
+  "legalName": "Abenzo Web Development & Software Solutions",
+  "description": "Abenzo is a premium web development and 3D digital experience agency specializing in high-performance Next.js websites, interactive 3D web experiences, custom web applications, and UI/UX design.",
+  "website": "https://abenzo.co.in",
+  "canonicalUrl": "https://abenzo.co.in",
+  "headquarters": {
+    "country": "India",
+    "region": "Kerala"
+  },
+  "contact": {
+    "whatsapp": "+918590814463",
+    "whatsappUrl": "https://wa.me/918590814463",
+    "email": "abenzo.co.in@gmail.com",
+    "instagram": "https://instagram.com/abenzo.co.in"
+  },
+  "services": [
+    {
+      "name": "Custom Web Development",
+      "url": "https://abenzo.co.in/services/web-development",
+      "description": "Bespoke, high-performance websites engineered for business growth, speed, and search visibility."
+    },
+    {
+      "name": "3D Web Development & Three.js",
+      "url": "https://abenzo.co.in/services/3d-web-development",
+      "description": "Immersive, interactive 3D web applications and WebGL experiences built with Three.js and React Three Fiber."
+    },
+    {
+      "name": "Next.js Development",
+      "url": "https://abenzo.co.in/services/nextjs-development",
+      "description": "Enterprise-grade Next.js web applications with server-side rendering, speed optimization, and SEO."
+    },
+    {
+      "name": "React.js Frontend Development",
+      "url": "https://abenzo.co.in/services/react-development",
+      "description": "Dynamic, responsive user interfaces and modern single-page applications built with React."
+    },
+    {
+      "name": "UI/UX Design & Website Redesign",
+      "url": "https://abenzo.co.in/services/ui-ux-design",
+      "description": "Intuitive user interfaces, design systems, and conversion-focused website redesigns."
+    },
+    {
+      "name": "E-Commerce Development",
+      "url": "https://abenzo.co.in/services/ecommerce-development",
+      "description": "Custom online storefronts with seamless checkout flows, payment gateways, and inventory management."
+    },
+    {
+      "name": "Shopify Development",
+      "url": "https://abenzo.co.in/services/shopify-development",
+      "description": "Custom Shopify theme design, store setup, app integrations, and conversion rate optimization."
+    },
+    {
+      "name": "SaaS & Web App Development",
+      "url": "https://abenzo.co.in/services/saas-development",
+      "description": "Scalable cloud applications, MVPs, client portals, and bespoke business systems."
+    }
+  ],
+  "technologies": [
+    "Next.js",
+    "React.js",
+    "Three.js",
+    "React Three Fiber",
+    "WebGL",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Node.js",
+    "Firebase",
+    "MongoDB",
+    "Vercel"
+  ],
+  "portfolio": [
+    {
+      "title": "PetLink",
+      "tagline": "AI-powered pet matchmaking & health ecosystem",
+      "url": "https://petlinkk.vercel.app",
+      "technologies": ["Next.js", "Firebase", "MongoDB", "Gemini AI"]
+    },
+    {
+      "title": "My Coco",
+      "tagline": "Immersive 3D browser game experience",
+      "url": "https://mycocopet.vercel.app",
+      "technologies": ["React Three Fiber", "Three.js", "GSAP", "Next.js"]
+    }
+  ],
+  "machineReadableResources": {
+    "sitemap": "https://abenzo.co.in/sitemap.xml",
+    "llms": "https://abenzo.co.in/llms.txt",
+    "agentsTxt": "https://abenzo.co.in/agents.txt",
+    "agentsJson": "https://abenzo.co.in/agents.json",
+    "agenticXml": "https://abenzo.co.in/agentic.xml",
+    "robotsTxt": "https://abenzo.co.in/robots.txt"
+  },
+  "capabilities": {
+    "publicApi": false,
+    "mcpServer": false,
+    "customQuotesAvailable": true,
+    "directChatChannel": "WhatsApp"
+  }
+}

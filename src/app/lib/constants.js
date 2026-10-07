@@ -3,9 +3,9 @@
 // Change ONE place to update everything across the site.
 // ============================================================
 
-// Base site URL — update when moving to a custom domain
+// Base site URL — canonical production domain
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://abenzo.vercel.app';
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://abenzo.co.in';
 
 // ─── WhatsApp Configuration ───────────────────────────────
 // Change this number when the WhatsApp Business account is ready.
@@ -29,10 +29,11 @@ export const CONTACT = {
 };
 
 // ─── Analytics ────────────────────────────────────────────
-// Set via environment variables — never hard-code IDs.
+// Set via environment variables or fallbacks — never commit private keys.
 export const ANALYTICS = {
-  googleId:    process.env.NEXT_PUBLIC_GA_ID         || '',
-  metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || '960438733777815',
+  googleId:         process.env.NEXT_PUBLIC_GA_ID              || '',
+  metaPixelId:      process.env.NEXT_PUBLIC_META_PIXEL_ID      || '960438733777815',
+  clarityProjectId: process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || 'yu35dvm2vx',
 };
 
 // ─── Packages ─────────────────────────────────────────────

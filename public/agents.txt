@@ -1,0 +1,53 @@
+# agents.txt for Abenzo (https://abenzo.co.in)
+# Emerging standard for machine-agent discovery and public web exploration.
+# Note: agents.txt is an informational discovery layer and does not guarantee ranking or visibility.
+
+User-Agent: *
+Allow: /
+Disallow: /private/
+Disallow: /go/
+
+# Organization Information
+Name: Abenzo
+Legal-Name: Abenzo Web Development & Software Solutions
+Type: Agency
+Category: Web Development, 3D Interactive Web Experiences, Custom Software Engineering
+Website: https://abenzo.co.in
+Canonical-URL: https://abenzo.co.in
+Headquarters-Country: India
+Target-Markets: India, United States, United Kingdom, United Arab Emirates, Canada, Australia, Global
+
+# Public Contact Information
+Contact-WhatsApp: +91 85908 14463
+Contact-WhatsApp-URL: https://wa.me/918590814463
+Contact-Email: abenzo.co.in@gmail.com
+Contact-Instagram: https://instagram.com/abenzo.co.in
+
+# Core Services
+Service: Custom Web Development (https://abenzo.co.in/services/web-development)
+Service: 3D Web Development & Three.js (https://abenzo.co.in/services/3d-web-development)
+Service: Next.js Development (https://abenzo.co.in/services/nextjs-development)
+Service: React.js Development (https://abenzo.co.in/services/react-development)
+Service: UI/UX Design & Redesign (https://abenzo.co.in/services/ui-ux-design)
+Service: E-Commerce Development (https://abenzo.co.in/services/ecommerce-development)
+Service: Shopify Development (https://abenzo.co.in/services/shopify-development)
+Service: SaaS Application Development (https://abenzo.co.in/services/saas-development)
+
+# Primary Public Pages
+Page: https://abenzo.co.in/
+Page: https://abenzo.co.in/services
+Page: https://abenzo.co.in/work
+Page: https://abenzo.co.in/about
+Page: https://abenzo.co.in/contact
+
+# Machine-Readable Endpoints & Manifests
+Sitemap: https://abenzo.co.in/sitemap.xml
+LLMs-Txt: https://abenzo.co.in/llms.txt
+Agents-JSON: https://abenzo.co.in/agents.json
+Agentic-XML: https://abenzo.co.in/agentic.xml
+Robots-Txt: https://abenzo.co.in/robots.txt
+
+# API & Protocol Declarations
+API-Status: No public unauthenticated REST API or MCP server endpoints are currently exposed.
+Authentication-Requirement: Public informational pages are open for standard crawling and indexing.
+Discovery-Policy: AI search engines, citation systems, and search bots may inspect, index, and cite public informational pages.
