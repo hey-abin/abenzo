@@ -11,7 +11,7 @@ export const SITE_URL =
 // ─── WhatsApp Configuration ───────────────────────────────
 // Change this number when the WhatsApp Business account is ready.
 // Format: country code + number, no + or spaces.
-export const WA_NUMBER = '918590814463';
+export const WA_NUMBER = '918075307754';
 
 export const WA_DEFAULT_MESSAGE =
   "Hi Abenzo, I'm interested in building a website/software for my business. I'd like to discuss my requirements.";
