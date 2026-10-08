@@ -6,7 +6,7 @@
 // Base site URL — canonical production domain
 // Set NEXT_PUBLIC_SITE_URL in your hosting env vars to override (e.g. https://abenzo.co.in)
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://abenzo.co.in';
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://abenzo.vercel.app';
 
 // ─── WhatsApp Configuration ───────────────────────────────
 // Change this number when the WhatsApp Business account is ready.
