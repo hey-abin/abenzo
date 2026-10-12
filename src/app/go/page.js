@@ -51,6 +51,24 @@ const services = [
 
 const projects = [
   {
+    title: 'SMS Speed Roadways',
+    tagline: 'Logistics platform with 3D fleet interaction',
+    tech: ['Next.js', 'Three.js', 'Tailwind CSS'],
+    link: 'https://www.smsspeedroadways.com/',
+  },
+  {
+    title: 'Verdant Commerce',
+    tagline: 'Sustainable lifestyle e-commerce store',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion'],
+    link: 'https://verdant-commerce.vercel.app/',
+  },
+  {
+    title: 'Leafnut',
+    tagline: 'Scroll-driven interactive product landing page',
+    tech: ['React', 'Canvas API', 'Framer Motion'],
+    link: 'https://leafnut-landing-page.vercel.app/',
+  },
+  {
     title: 'PetLink',
     tagline: 'AI pet matchmaking & health ecosystem',
     tech: ['Next.js', 'Firebase', 'Gemini AI'],

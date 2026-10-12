@@ -35,36 +35,35 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div
-          className="hidden md:flex items-center bg-white/5 backdrop-blur-md px-1 py-1 rounded-full border border-white/10 relative"
-          role="list"
+        <ul
+          className="hidden md:flex items-center bg-white/5 backdrop-blur-md px-1 py-1 rounded-full border border-white/10 relative list-none m-0 p-0"
         >
           {navLinks.map((link, index) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              role="listitem"
-              className="relative px-4 py-2 text-sm font-medium transition-colors"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <span
-                className={`relative z-10 transition-colors duration-200 ${
-                  hoveredIndex === index ? 'text-white' : 'text-gray-400'
-                }`}
+            <li key={link.name} className="relative">
+              <Link
+                href={link.href}
+                className="relative px-4 py-2 text-sm font-medium transition-colors block"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
-                {link.name}
-              </span>
-              {hoveredIndex === index && (
-                <motion.div
-                  layoutId="nav-pill"
-                  className="absolute inset-0 bg-[#008278] rounded-full"
-                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-            </Link>
+                <span
+                  className={`relative z-10 transition-colors duration-200 ${
+                    hoveredIndex === index ? 'text-white' : 'text-gray-400'
+                  }`}
+                >
+                  {link.name}
+                </span>
+                {hoveredIndex === index && (
+                  <motion.div
+                    layoutId="nav-pill"
+                    className="absolute inset-0 bg-[#008278] rounded-full"
+                    transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
@@ -107,16 +106,19 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="absolute top-20 left-4 right-4 bg-[#050a08]/95 backdrop-blur-xl border border-white/10 p-6 rounded-2xl md:hidden shadow-2xl flex flex-col gap-4 text-center z-40"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-base font-semibold text-gray-300 hover:text-[#008278] transition-colors py-1"
-              >
-                {link.name}
-              </Link>
-            ))}
+            <ul className="flex flex-col gap-4 text-center list-none m-0 p-0">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-base font-semibold text-gray-300 hover:text-[#008278] transition-colors py-1 block"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
             <div className="h-px bg-white/10 my-1" />
 

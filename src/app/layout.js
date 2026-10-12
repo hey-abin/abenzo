@@ -92,12 +92,82 @@ export default function RootLayout({ children }) {
         '@id': `${SITE_URL}/#website`,
         url: SITE_URL,
         name: 'Abenzo',
+        alternateName: [
+          'Abenzo Agency',
+          'Abenzo Web Development',
+          'Abenzo 3D Agency',
+          'abenzo.co.in',
+        ],
         description:
           'Abenzo is a premium web development and 3D digital experience agency specializing in high-performance Next.js websites, interactive 3D web experiences, and custom software.',
         publisher: {
           '@id': `${SITE_URL}/#organization`,
         },
         inLanguage: 'en',
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${SITE_URL}/#site-navigation`,
+        name: 'Main Navigation',
+        description: 'Primary site navigation and services of Abenzo',
+        itemListElement: [
+          {
+            '@type': 'SiteNavigationElement',
+            position: 1,
+            name: 'Services',
+            description:
+              'Custom web development, interactive 3D websites, Next.js engineering, UI/UX design, and custom software solutions.',
+            url: `${SITE_URL}/services`,
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            position: 2,
+            name: 'Work',
+            description:
+              'Featured case studies and portfolio web applications engineered by Abenzo including SMS Speed Roadways, Verdant, and Leafnut.',
+            url: `${SITE_URL}/work`,
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            position: 3,
+            name: 'Packages & Pricing',
+            description:
+              'Transparent web development and design packages starting from ₹15,000 with clear deliverables and milestones.',
+            url: `${SITE_URL}/#packages`,
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            position: 4,
+            name: 'About Us',
+            description:
+              'Learn about Abenzo, our engineering principles, design standards, and our mission to build high-performance digital products.',
+            url: `${SITE_URL}/about`,
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            position: 5,
+            name: 'Contact Us',
+            description:
+              'Get in touch with Abenzo via WhatsApp or email to discuss custom web development and digital projects.',
+            url: `${SITE_URL}/contact`,
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            position: 6,
+            name: 'Custom Web Development',
+            description:
+              'High-performance custom websites built with Next.js and React — tailored to your business goals.',
+            url: `${SITE_URL}/services/web-development`,
+          },
+          {
+            '@type': 'SiteNavigationElement',
+            position: 7,
+            name: '3D Web Development',
+            description:
+              'Immersive 3D interactive web experiences powered by Three.js, WebGL, and React Three Fiber.',
+            url: `${SITE_URL}/services/3d-web-development`,
+          },
+        ],
       },
       {
         '@type': ['Organization', 'ProfessionalService'],

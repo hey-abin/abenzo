@@ -16,7 +16,7 @@ import { SITE_URL } from '../lib/constants';
 export const metadata = {
   title: 'Selected Work & Web Development Case Studies',
   description:
-    'Explore Abenzo’s featured work, including PetLink AI platform, My Coco 3D web experience, and custom digital systems built with Next.js and Three.js.',
+    'Explore Abenzo’s featured work, including SMS Speed Roadways, Verdant Commerce, Leafnut, PetLink AI platform, and My Coco 3D web experience.',
   alternates: {
     canonical: `${SITE_URL}/work`,
   },
@@ -30,6 +30,60 @@ export const metadata = {
 };
 
 const featuredProjects = [
+  {
+    title: 'SMS Speed Roadways',
+    tagline: 'Complete Logistics & Transportation Platform',
+    description:
+      'A commercial logistics and freight web platform built for SMS Speed Roadways, serving textile transport corridors between Tirupur, Erode, and Kerala. Engineered with interactive 3D WebGL fleet models, route visualization, and instant quote inquiry flows.',
+    tech: ['Next.js', 'Three.js', 'Tailwind CSS', 'GSAP', 'WebGL'],
+    features: [
+      'Interactive 3D truck rendering and animations in the browser',
+      'Dynamic interstate transport route mapping and terminal coverage',
+      'Door pickup inquiry and real-time WhatsApp quote integration',
+      'Mobile-optimized responsive architecture with fast load times',
+    ],
+    link: 'https://www.smsspeedroadways.com/',
+    badge: 'Logistics Web Platform',
+    color: 'from-red-900/30 via-red-950/20 to-black',
+    borderColor: 'border-red-500/20 hover:border-red-500/50',
+    accent: 'text-red-400',
+  },
+  {
+    title: 'Verdant Commerce',
+    tagline: 'Modern Sustainable E-Commerce Experience',
+    description:
+      'A clean, contemporary online shopping experience for conscious lifestyle goods. Engineered with dynamic collection sorting, real-time cart state management, category filtering, and micro-interactions for a fluid shopping journey.',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Radix UI', 'Vite'],
+    features: [
+      'Smooth slide-over cart drawer with instant quantity updates',
+      'Interactive product filtering, badges, and category tabs',
+      'Refined typographic hierarchy with accessible contrast tokens',
+      'Fast client-side routing and instant visual feedback',
+    ],
+    link: 'https://verdant-commerce.vercel.app/',
+    badge: 'E-Commerce Storefront',
+    color: 'from-emerald-900/30 via-emerald-950/20 to-black',
+    borderColor: 'border-emerald-500/20 hover:border-emerald-500/50',
+    accent: 'text-emerald-400',
+  },
+  {
+    title: 'Leafnut',
+    tagline: 'Scroll-Driven Product Storytelling & Image Sequence',
+    description:
+      'An artisanal product landing page crafted for Leafnut premium wood-pressed and cold-pressed oils. Features interactive scroll-driven image sequence playback on canvas, nutritional benefit storytelling, and friction-free purchase paths.',
+    tech: ['React', 'HTML5 Canvas', 'Framer Motion', 'Tailwind CSS'],
+    features: [
+      'Scroll-synchronized frame animation demonstrating product reveal',
+      'Detailed nutritional analysis and cold-pressed extraction benefits',
+      'Conversion-focused visual layout with customer trust proofs',
+      'Adaptive image asset buffering for fast initial viewport render',
+    ],
+    link: 'https://leafnut-landing-page.vercel.app/',
+    badge: 'Interactive Product Landing',
+    color: 'from-amber-900/30 via-amber-950/20 to-black',
+    borderColor: 'border-amber-500/20 hover:border-amber-500/50',
+    accent: 'text-amber-400',
+  },
   {
     title: 'PetLink',
     tagline: 'AI-Powered Pet Matchmaking & Health Ecosystem',
@@ -75,7 +129,7 @@ export default function WorkPage() {
     name: 'Abenzo Portfolio & Selected Work',
     url: `${SITE_URL}/work`,
     description:
-      'Case studies and featured web applications engineered by Abenzo, including PetLink and My Coco.',
+      'Case studies and featured web applications engineered by Abenzo, including SMS Speed Roadways, Verdant Commerce, Leafnut, PetLink, and My Coco.',
     publisher: {
       '@type': 'ProfessionalService',
       name: 'Abenzo',

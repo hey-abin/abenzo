@@ -83,6 +83,42 @@ const services = [
 
 const projects = [
   {
+    title: 'SMS Speed Roadways',
+    tagline: 'Commercial logistics & transportation platform.',
+    description:
+      'A full logistics web platform for South India textile transportation — featuring 3D fleet interaction, dynamic route coverage, and door pickup scheduling.',
+    tech: ['Next.js', 'Three.js', 'Tailwind CSS', 'GSAP'],
+    features: ['Interactive 3D truck model', 'Route mapping & door pickup', 'Instant WhatsApp booking'],
+    link: 'https://www.smsspeedroadways.com/',
+    color: 'from-red-950/40 to-neutral-950/30',
+    accentColor: 'text-red-400',
+    borderColor: 'border-red-500/20',
+  },
+  {
+    title: 'Verdant Commerce',
+    tagline: 'Curated modern lifestyle & sustainable e-commerce.',
+    description:
+      'A modern e-commerce storefront for sustainable lifestyle goods — featuring dynamic collections, interactive cart drawers, and fluid motion design.',
+    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Radix UI'],
+    features: ['Interactive cart drawer', 'Category filtering & search', 'Responsive modern shopping UX'],
+    link: 'https://verdant-commerce.vercel.app/',
+    color: 'from-emerald-950/40 to-teal-950/20',
+    accentColor: 'text-emerald-400',
+    borderColor: 'border-emerald-500/20',
+  },
+  {
+    title: 'Leafnut',
+    tagline: 'Premium wood-pressed oils & wellness showcase.',
+    description:
+      'A conversion-focused product showcase for cold-pressed organic oils — featuring scroll-driven frame sequence animations and nutritional storytelling.',
+    tech: ['React', 'Canvas API', 'Framer Motion', 'Tailwind CSS'],
+    features: ['Scroll-driven bottle sequence', 'Purity & nutritional breakdown', 'High-conversion storytelling'],
+    link: 'https://leafnut-landing-page.vercel.app/',
+    color: 'from-amber-950/40 to-neutral-950/20',
+    accentColor: 'text-amber-400',
+    borderColor: 'border-amber-500/20',
+  },
+  {
     title: 'PetLink',
     tagline: 'AI-powered pet matchmaking & health ecosystem.',
     description:
