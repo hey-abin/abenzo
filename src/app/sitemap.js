@@ -15,6 +15,7 @@ export default function sitemap() {
     { path: '/services/ecommerce-development', changeFrequency: 'weekly', priority: 0.8 },
     { path: '/services/shopify-development', changeFrequency: 'weekly', priority: 0.8 },
     { path: '/services/saas-development', changeFrequency: 'weekly', priority: 0.8 },
+    { path: '/privacy-policy', changeFrequency: 'monthly', priority: 0.6 },
   ];
 
   const now = new Date();

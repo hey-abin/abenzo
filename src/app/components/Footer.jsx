@@ -23,6 +23,7 @@ const companyLinks = [
   { name: 'Packages & Pricing', href: '/#packages' },
   { name: 'Development Process', href: '/#process' },
   { name: 'Frequently Asked Questions', href: '/#faq' },
+  { name: 'Privacy Policy', href: '/privacy-policy' },
   { name: 'Contact & Quotes', href: '/contact' },
 ];
 
@@ -160,6 +161,9 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>© {new Date().getFullYear()} Abenzo. All rights reserved.</p>
           <div className="flex items-center gap-6">
+            <Link href="/privacy-policy" className="hover:text-gray-300 transition-colors">
+              Privacy Policy
+            </Link>
             <Link href="/contact" className="hover:text-gray-300 transition-colors">
               Project Inquiries
             </Link>
